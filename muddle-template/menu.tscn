@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://4kfk5xm8tojl"]
+
+[ext_resource type="Script" uid="uid://hn4free5mjtd" path="res://deploy.gd" id="1_lti8b"]
+[ext_resource type="AudioStream" uid="uid://bq0i4d4jujxps" path="res://uwu.mp3" id="2_ouk20"]
+
+[node name="menu" type="Node2D" unique_id=1368875967]
+
+[node name="Control" type="Control" parent="." unique_id=1249598294]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=2068569022]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 132.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer" unique_id=1138500896]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="Control/HBoxContainer/VBoxContainer" unique_id=831414609]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Collectibles"
+
+[node name="Button2" type="Button" parent="Control/HBoxContainer/VBoxContainer" unique_id=1775808147]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Leave"
+
+[node name="Button" type="Button" parent="Control/HBoxContainer" unique_id=886196660]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Deploy"
+script = ExtResource("1_lti8b")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/HBoxContainer" unique_id=645265747]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="Control/HBoxContainer/VBoxContainer2" unique_id=1700828200]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Save 1"
+
+[node name="Button2" type="Button" parent="Control/HBoxContainer/VBoxContainer2" unique_id=948012112]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Save 2"
+
+[node name="Button3" type="Button" parent="Control/HBoxContainer/VBoxContainer2" unique_id=2011472514]
+layout_mode = 2
+text = "Clean Save"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1675417268]
+stream = ExtResource("2_ouk20")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="Control/HBoxContainer/Button" to="Control/HBoxContainer/Button" method="_on_pressed"]
