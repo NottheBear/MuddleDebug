@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://b7oe12mtvybju"]
 
 [node name="fauna" type="Node2D" unique_id=1457391612]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1973930905]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=844686474]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1978022779]
