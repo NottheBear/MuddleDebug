@@ -1,0 +1,27 @@
+[gd_scene format=4 uid="uid://cwheikir1ssxr"]
+
+[ext_resource type="TileSet" uid="uid://cn4lq645h60xd" path="res://tileset.tres" id="1_1vjfv"]
+[ext_resource type="Script" uid="uid://bst3hehsjxjcw" path="res://drone.gd" id="2_g4jik"]
+[ext_resource type="Texture2D" uid="uid://276dt5c8raqu" path="res://icon.svg" id="3_cp13g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_it8ie"]
+radius = 14.0
+height = 52.0
+
+[node name="Node2D" type="Node2D" unique_id=594476473]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1077672814]
+tile_map_data = PackedByteArray("AAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAA=")
+tile_set = ExtResource("1_1vjfv")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=919211603]
+script = ExtResource("2_g4jik")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=406465285]
+position = Vector2(40, 38)
+scale = Vector2(0.20312501, 0.4140625)
+texture = ExtResource("3_cp13g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1519513317]
+position = Vector2(40, 37)
+shape = SubResource("CapsuleShape2D_it8ie")
