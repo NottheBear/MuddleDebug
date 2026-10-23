@@ -24,12 +24,15 @@ func maketerrain():
 		for y in range(map_height):
 			set_cell(Vector2i(x,y), mud_source, null_atlas)
 			if y < 5 or y >= map_height - 5:
-				set_cell(Vector2i(x,y), water_source, null_atlas)
+				if (x + y) % 2 == 0:
+					set_cell(Vector2i(x,y), water_source, null_atlas)
+				else:
+					set_cell(Vector2i(x,y), water_source, water_atlas)
 func water_timer():
 	var watertime = $Timer
 	watertime.timeout.connect(func():
 		water_swap = not water_swap
-		for coords in get_used_cells():
+		for coords in get_used_cells_by_id(2):
 			var is_even = (coords.x + coords.y) % 2 == 0
 			var active_atlas = water_atlas if (is_even == water_swap) else null_atlas
 			set_cell(coords, water_source, active_atlas)
