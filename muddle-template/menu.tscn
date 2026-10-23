@@ -63,22 +63,6 @@ text = "Save 2"
 layout_mode = 2
 text = "Clean Save"
 
-[node name="Button" type="Button" parent="Control" unique_id=641007330]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_top = 550.0
-offset_right = 61.0
-offset_bottom = 627.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "click me for candy"
-flat = true
-autowrap_mode = 1
-
 [node name="Label" type="Label" parent="Control" unique_id=74081415]
 texture_filter = 1
 layout_mode = 0
@@ -91,7 +75,7 @@ label_settings = SubResource("LabelSettings_5ji6q")
 paragraph_separator = ""
 
 [node name="Timer" type="Timer" parent="Control" unique_id=1183679624]
-wait_time = 1.4929999999999999
+wait_time = 1.493
 one_shot = true
 
 [node name="Label2" type="Label" parent="Control" unique_id=227382393]
@@ -105,26 +89,26 @@ text = "it dosent work"
 
 [node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=63212143]
 visible = false
-position = Vector2(575, 324.5)
+position = Vector2(517, 387)
 scale = Vector2(35.8125, 20.09375)
 texture = ExtResource("3_4hy44")
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Control" unique_id=2118041109]
-stream = ExtResource("4_ytr4m")
-volume_db = 19.887
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control" unique_id=1675417268]
 stream = ExtResource("2_ouk20")
 autoplay = true
 parameters/looping = true
 
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Control" unique_id=2118041109]
+stream = ExtResource("4_ytr4m")
+volume_db = 19.887
+
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Control" unique_id=2119619740]
 stream = ExtResource("6_l48gv")
+volume_db = -6.79
 parameters/looping = false
 
 [connection signal="pressed" from="Control/HBoxContainer/VBoxContainer/Button" to="Control" method="_on_button_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/VBoxContainer/Button2" to="Control" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/Button" to="Control/HBoxContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/VBoxContainer2/Button3" to="Control" method="_on_button_3_pressed"]
-[connection signal="pressed" from="Control/Button" to="Control" method="_on_bsutton_pressed"]
 [connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]

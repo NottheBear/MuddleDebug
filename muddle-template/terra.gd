@@ -41,4 +41,5 @@ func drone_box():
 	var randomx = randi_range(1, map_width - 1)
 	var centerofbox = Vector2i(randomx, 5)
 	set_cell(centerofbox, box_source, null_atlas)
-	
+	set_cell(Vector2i(randomx - 1, 5), dugmud_source, null_atlas)
+	set_cell(Vector2i(randomx + 1, 5), dugmud_source, null_atlas)
