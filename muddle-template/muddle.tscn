@@ -1,27 +1,38 @@
 [gd_scene format=4 uid="uid://cwheikir1ssxr"]
 
 [ext_resource type="TileSet" uid="uid://cn4lq645h60xd" path="res://tileset.tres" id="1_1vjfv"]
+[ext_resource type="Script" uid="uid://b84o6hyxskhf3" path="res://terra.gd" id="2_cp13g"]
 [ext_resource type="Script" uid="uid://bst3hehsjxjcw" path="res://drone.gd" id="2_g4jik"]
 [ext_resource type="Texture2D" uid="uid://276dt5c8raqu" path="res://icon.svg" id="3_cp13g"]
+[ext_resource type="AudioStream" uid="uid://c0bbxydwuiihb" path="res://file2.mp3" id="5_5rvxh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_it8ie"]
-radius = 14.0
-height = 52.0
+radius = 8.0
+height = 39.0
 
-[node name="Node2D" type="Node2D" unique_id=594476473]
+[node name="terra" type="Node2D" unique_id=594476473]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1077672814]
-tile_map_data = PackedByteArray("AAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAACAAAAAgAAAAAAAAAEAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAIAAAAAgAAAAAAAAAKAAAAAgAAAAAAAAAMAAAAAgAAAAAAAAAOAAAAAgAAAAAAAAANAAAAAgABAAAAAAALAAAAAgABAAAAAAAJAAAAAgABAAAAAAAHAAAAAgABAAAAAAAFAAAAAgABAAAAAAADAAAAAgABAAAAAAABAAAAAgABAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAACAAQAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAA=")
 tile_set = ExtResource("1_1vjfv")
+script = ExtResource("2_cp13g")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=919211603]
 script = ExtResource("2_g4jik")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=406465285]
-position = Vector2(40, 38)
-scale = Vector2(0.20312501, 0.4140625)
+position = Vector2(89, -66)
+scale = Vector2(0.11718752, 0.3359375)
 texture = ExtResource("3_cp13g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1519513317]
-position = Vector2(40, 37)
+position = Vector2(89, -64.5)
 shape = SubResource("CapsuleShape2D_it8ie")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1093598159]
+zoom = Vector2(3, 3)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2073255244]
+stream = ExtResource("5_5rvxh")
+autoplay = true
+parameters/looping = true
