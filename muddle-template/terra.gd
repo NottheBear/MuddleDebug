@@ -1,10 +1,12 @@
 extends TileMapLayer
 
+@export var drone = CharacterBody2D
 @export var map_width: int = 200
 @export var map_height: int = 50
 
 var mud_source: int = 0
 var box_source: int = 3
+var box_bottom_source: int = 4
 var null_atlas: Vector2i = Vector2i(0,0)
 
 var dugmud_source: int = 1
@@ -43,3 +45,6 @@ func drone_box():
 	set_cell(centerofbox, box_source, null_atlas)
 	set_cell(Vector2i(randomx - 1, 5), dugmud_source, null_atlas)
 	set_cell(Vector2i(randomx + 1, 5), dugmud_source, null_atlas)
+	set_cell(Vector2i(randomx, 6), box_bottom_source, null_atlas)
+	var tile_size = 32
+	drone.global_position = Vector2((randomx * tile_size)+16, (5 * tile_size)+16)

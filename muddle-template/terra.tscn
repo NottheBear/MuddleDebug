@@ -14,12 +14,14 @@ data = PackedByteArray("//uwBAAABBNfyZVgwACCa/kyrBgAExURT7m3gAJioin3NvAAEAFlY0EB
 
 [node name="terra" type="Node2D" unique_id=594476473]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1077672814]
+[node name="Crust" type="TileMapLayer" parent="." unique_id=1077672814 node_paths=PackedStringArray("drone")]
+unique_name_in_owner = true
 tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAACAAAAAgAAAAAAAAAEAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAIAAAAAgAAAAAAAAAKAAAAAgAAAAAAAAAMAAAAAgAAAAAAAAAOAAAAAgAAAAAAAAANAAAAAgABAAAAAAALAAAAAgABAAAAAAAJAAAAAgABAAAAAAAHAAAAAgABAAAAAAAFAAAAAgABAAAAAAADAAAAAgABAAAAAAABAAAAAgABAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAACAAQAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAABAP//AwAAAAAAAAA=")
 tile_set = ExtResource("1_1vjfv")
 script = ExtResource("2_cp13g")
+drone = NodePath("../CharacterBody2D")
 
-[node name="Timer" type="Timer" parent="TileMapLayer" unique_id=1570967744]
+[node name="Timer" type="Timer" parent="Crust" unique_id=1570967744]
 autostart = true
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=919211603]

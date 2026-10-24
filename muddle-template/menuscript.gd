@@ -1,5 +1,5 @@
 extends Control
-var stuprid = 0 
+var stuppid = 0 
 var jiggle_physics_max = ["trouble ", "puddle ", "cuddle ", "double ", "couple "]
 
 func lsblk() -> void:
@@ -17,8 +17,8 @@ func _on_button_pressed() -> void:
 func _on_button_2_pressed() -> void:
 	get_tree().quit()
 func _on_button_3_pressed() -> void:
-	stuprid += 1
-	if stuprid == 10:
+	stuppid += 1
+	if stuppid == 10:
 		$Label2.text = "BEEH"
 		$Sprite2D.show()
 		$Label2.show()
