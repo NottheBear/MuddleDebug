@@ -1,10 +1,13 @@
 extends CharacterBody2D
 
+@export var splotch = Sprite2D
 
 const SPEED = 300.0
 
 var picked_up: bool = false
 
+func _process(delta: float) -> void:
+	splotch.global_position = get_global_mouse_position()
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -32,7 +35,9 @@ func _input(event):
 				if current_source == crust.mud_source:
 					crust.set_cells_terrain_connect([tile_pos], 0, 0)
 					picked_up = true
+					splotch.visible=true
 			else:
 				if current_source == crust.dugmud_source:
 					crust.set_cell(tile_pos, crust.mud_source, crust.null_atlas)
 					picked_up = false
+					splotch.visible=false
