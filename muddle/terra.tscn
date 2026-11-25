@@ -15,8 +15,8 @@ data = PackedByteArray("//uwBAAABBNfyZVgwACCa/kyrBgAExURT7m3gAJioin3NvAAEAFlY0EB
 
 [sub_resource type="Gradient" id="Gradient_oejjr"]
 interpolation_mode = 1
-offsets = PackedFloat32Array(0, 0.464, 1)
-colors = PackedColorArray(0.6251969, 0.3488296, 0, 1, 0.8128132, 0.5461859, 0.29476538, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0, 0.648, 1)
+colors = PackedColorArray(0.33333334, 0.17254902, 0.14901961, 1, 0.47058824, 0.3372549, 0.31764707, 1, 1, 1, 1, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_47xu7"]
 noise_type = 3
@@ -32,6 +32,7 @@ seamless = true
 
 [node name="Crust" type="TileMapLayer" parent="." unique_id=1077672814 node_paths=PackedStringArray("drone")]
 unique_name_in_owner = true
+z_index = 99
 tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAACAAAAAgAAAAAAAAAEAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAIAAAAAgAAAAAAAAAKAAAAAgAAAAAAAAAMAAAAAgAAAAAAAAAOAAAAAgAAAAAAAAANAAAAAgABAAAAAAALAAAAAgABAAAAAAAJAAAAAgABAAAAAAAHAAAAAgABAAAAAAAFAAAAAgABAAAAAAADAAAAAgABAAAAAAABAAAAAgABAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAACAAQAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAABAP//AwAAAAAAAAA=")
 tile_set = ExtResource("1_1vjfv")
 script = ExtResource("2_cp13g")
@@ -53,7 +54,7 @@ texture = ExtResource("3_cp13g")
 shape = SubResource("CapsuleShape2D_it8ie")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1093598159]
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 limit_left = 0
 limit_right = 6400
 
@@ -67,7 +68,7 @@ visible = false
 texture = ExtResource("5_72v40")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=772662921]
-scroll_scale = Vector2(1.2, 1.2)
+scroll_scale = Vector2(0.8, 0.8)
 repeat_size = Vector2(6400, 1280)
 repeat_times = 2
 

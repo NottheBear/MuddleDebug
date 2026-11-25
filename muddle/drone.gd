@@ -1,28 +1,31 @@
 extends CharacterBody2D
 
-@export var splotch = Sprite2D
+@export var splotch: Sprite2D
 
-const SPEED = 300.0
+const SPEED = 200.0
+const GRAVITY = 400.0
+const TERMINALVELOCITY := 400.0
 
 var picked_up: bool = false
 
-func _process(delta: float) -> void:
-	splotch.global_position = get_global_mouse_position()
+func _process(_delta: float) -> void:
+	if splotch:
+		splotch.global_position = get_global_mouse_position()
+
 func _physics_process(delta: float) -> void:
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var directionx := Input.get_axis("ui_left", "ui_right") #simplify this
+	var directionx := Input.get_axis("ui_left", "ui_right")
 	if directionx:
 		velocity.x = directionx * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	var directiony := Input.get_axis("ui_up", "ui_down")
-	if directiony:
-		velocity.y = directiony * SPEED
-	else:
-		velocity.y = move_toward(velocity.x, 0, SPEED)
-
+	if Input.is_action_pressed("ui_up"):
+		velocity.y = move_toward(velocity.y, -TERMINALVELOCITY, SPEED * delta)
+	elif not is_on_floor():
+		velocity.y = move_toward(velocity.y, TERMINALVELOCITY, GRAVITY * delta)
+	if is_on_floor():
+		velocity.x = 0 # no ground movement
 	move_and_slide()
+
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		var crust = %Crust

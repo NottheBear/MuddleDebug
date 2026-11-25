@@ -1,11 +1,6 @@
 extends Control
 var stuppid = 0 
-var jiggle_physics_max = ["trouble ", "puddle ", "cuddle ", "double ", "couple "]
 
-func lsblk() -> void:
-	$Label.text = "muddle " + jiggle_physics_max.pick_random() + jiggle_physics_max.pick_random() + jiggle_physics_max.pick_random()
-func _ready() -> void:
-	lsblk()
 func stupid() -> void:
 	$Label2.show()
 	$Timer.start()

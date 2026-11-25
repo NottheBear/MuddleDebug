@@ -7,10 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://bcwix1xesuxl0" path="res://goat-simulator-baa.mp3" id="4_ytr4m"]
 [ext_resource type="AudioStream" uid="uid://cnytwmw4rec0a" path="res://goat-simulator.mp3" id="6_l48gv"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_5ji6q"]
-line_spacing = -4.87
-font_color = Color(0.573629, 0.3329868, 0.23170918, 1)
-
 [node name="menu" type="Node2D" unique_id=1368875967]
 
 [node name="Control" type="Control" parent="." unique_id=1249598294]
@@ -62,17 +58,6 @@ text = "Save 2"
 [node name="Button3" type="Button" parent="Control/HBoxContainer/VBoxContainer2" unique_id=2011472514]
 layout_mode = 2
 text = "Clean Save"
-
-[node name="Label" type="Label" parent="Control" unique_id=74081415]
-texture_filter = 1
-layout_mode = 0
-offset_left = 8.0
-offset_top = 131.0
-offset_right = 48.0
-offset_bottom = 752.0
-text = "muddle trouble yodel juggle"
-label_settings = SubResource("LabelSettings_5ji6q")
-paragraph_separator = ""
 
 [node name="Timer" type="Timer" parent="Control" unique_id=1183679624]
 wait_time = 1.493
