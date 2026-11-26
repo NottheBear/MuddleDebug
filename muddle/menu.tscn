@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b7vsuef773fiw" path="res://goat.png" id="3_4hy44"]
 [ext_resource type="AudioStream" uid="uid://bcwix1xesuxl0" path="res://goat-simulator-baa.mp3" id="4_ytr4m"]
 [ext_resource type="AudioStream" uid="uid://cnytwmw4rec0a" path="res://goat-simulator.mp3" id="6_l48gv"]
+[ext_resource type="Texture2D" uid="uid://cdv85acq6oa47" path="res://menubg.png" id="7_ecwwl"]
 
 [node name="menu" type="Node2D" unique_id=1368875967]
 
@@ -19,16 +20,11 @@ script = ExtResource("1_mae5d")
 [node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=2068569022]
 layout_mode = 0
 offset_right = 1152.0
-offset_bottom = 132.0
+offset_bottom = 122.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer" unique_id=1138500896]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Button" type="Button" parent="Control/HBoxContainer/VBoxContainer" unique_id=831414609]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Collectibles"
 
 [node name="Button2" type="Button" parent="Control/HBoxContainer/VBoxContainer" unique_id=1775808147]
 layout_mode = 2
@@ -45,19 +41,14 @@ script = ExtResource("1_lti8b")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="Control/HBoxContainer/VBoxContainer2" unique_id=1700828200]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Save 1"
-
-[node name="Button2" type="Button" parent="Control/HBoxContainer/VBoxContainer2" unique_id=948012112]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Save 2"
-
 [node name="Button3" type="Button" parent="Control/HBoxContainer/VBoxContainer2" unique_id=2011472514]
 layout_mode = 2
 text = "Clean Save"
+
+[node name="Button" type="Button" parent="Control/HBoxContainer/VBoxContainer2" unique_id=831414609]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Collectibles"
 
 [node name="Timer" type="Timer" parent="Control" unique_id=1183679624]
 wait_time = 1.493
@@ -92,8 +83,13 @@ stream = ExtResource("6_l48gv")
 volume_db = -6.79
 parameters/looping = false
 
-[connection signal="pressed" from="Control/HBoxContainer/VBoxContainer/Button" to="Control" method="_on_button_pressed"]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2113438734]
+z_index = -99
+position = Vector2(576, 324)
+texture = ExtResource("7_ecwwl")
+
 [connection signal="pressed" from="Control/HBoxContainer/VBoxContainer/Button2" to="Control" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/Button" to="Control/HBoxContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/VBoxContainer2/Button3" to="Control" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/VBoxContainer2/Button" to="Control" method="_on_button_pressed"]
 [connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]

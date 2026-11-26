@@ -4,6 +4,7 @@ extends TileMapLayer
 @export var map_width: int = 200
 @export var map_height: int = 50
 @export var cave_threshold: float = 0.2 #higher for small caves
+@export var plastic_threshold: float = 0.1
 
 var noise = FastNoiseLite.new()
 
@@ -13,6 +14,7 @@ var box_bottom_source: int = 4
 var null_atlas: Vector2i = Vector2i(0,0)
 var dugmud_source: int = 1
 var water_source: int = 2
+var plastic_source: int = 5
 var water_atlas: Vector2i = Vector2i(1,0)
 
 var water_swap: bool = false
@@ -32,6 +34,8 @@ func maketerrain():
 			set_cell(Vector2i(x,y), mud_source, null_atlas)
 			var pos = Vector2i(x,y)
 			var val = noise.get_noise_2d(x,y)
+			if val > plastic_threshold:
+				set_cell(Vector2i(x,y), plastic_source, null_atlas)
 			if val > cave_threshold:
 				cave_cells.append(pos)
 	set_cells_terrain_connect(cave_cells, 0, 0)
